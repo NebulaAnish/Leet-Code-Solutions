@@ -1,0 +1,14 @@
+class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        gcd = ""
+        if len(str1) < len(str2):
+            str1, str2 = str2, str1
+        s1 = len(str1)
+        s2 = len(str2)
+        for i in range(1,s2+1):
+            temp = str2[:i]
+            factor2 = int(s2/len(temp))
+            factor1 = int(s1/len(temp))
+            if temp * factor2 == str2 and temp*factor1 == str1:
+                gcd = temp
+        return gcd
