@@ -20,8 +20,8 @@ class Solution:
             dTurn = Dqueue.popleft()
             rTurn = Rqueue.popleft()
             if rTurn < dTurn:
-                Rqueue.append(dTurn+len(senate))
+                Rqueue.append(rTurn+len(senate))
             else:
-                Dqueue.append(rTurn+len(senate))
+                Dqueue.append(dTurn+len(senate))
 
         return "Radiant" if Rqueue else "Dire"
